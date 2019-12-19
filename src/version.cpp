@@ -33,11 +33,14 @@ const std::string CLIENT_NAME("BlackCoin");
 #    include "build.h"
 #endif
 
-// git will put "#define GIT_ARCHIVE 1" on the next line inside archives. 
+// git will put "#define GIT_ARCHIVE 1" on the next line inside archives.
+#ifdef GIT_ARCHIVE
+#define GIT_COMMIT_DATE "$Format:%cD$"
+#endif
+
 #define GIT_ARCHIVE 1
 #ifdef GIT_ARCHIVE
-#    define GIT_COMMIT_ID "32a928e"
-#    define GIT_COMMIT_DATE "$Format:%cD"
+#define GIT_COMMIT_ID "5564a689"
 #endif
 
 #define BUILD_DESC_FROM_COMMIT(maj,min,rev,build,commit) \
